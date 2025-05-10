@@ -231,4 +231,4 @@ def predict_target(n_clicks, value, selected_features):
     return f"Predicted {df_store['target']}: {prediction:.3f}"
 
 if __name__ == '__main__':
-    app.run_server(debug=True, port=int(os.environ.get('PORT', 8050)), host='0.0.0.0')
+    app.run(debug=True, port=int(os.environ.get('PORT', 8050)), host='0.0.0.0')
