@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import base64
 import io
+import os
 import plotly.express as px
 import numpy as np
 from sklearn.preprocessing import StandardScaler, LabelEncoder
@@ -230,4 +231,4 @@ def predict_target(n_clicks, value, selected_features):
     return f"Predicted {df_store['target']}: {prediction:.3f}"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run_server(debug=True, port=int(os.environ.get('PORT', 8050)), host='0.0.0.0')
